@@ -12,24 +12,34 @@ function Todo() {
   const [fillter, setFillter] = useState(false);
 
   const deleteItem = async (id) => {
-    const res = await axios.delete(`http://localhost:3001/api/item/${id}`);
+    const res = await axios.delete(
+      `https://todo-app-api-0a5r.onrender.com/api/item/${id}`
+    );
   };
 
   const updateItem = async (id, item) => {
-    const res = await axios.put(`http://localhost:3001/api/item/${id}`, {
-      completed: !item,
-    });
+    const res = await axios.put(
+      `https://todo-app-api-0a5r.onrender.com/api/item/${id}`,
+      {
+        completed: !item,
+      }
+    );
   };
   const addItem = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://localhost:3001/api/item", {
-      item: itemText,
-    });
+    const res = await axios.post(
+      "https://todo-app-api-0a5r.onrender.com/api/item",
+      {
+        item: itemText,
+      }
+    );
     setItemText("");
   };
   useEffect(() => {
     const getItemsList = async () => {
-      const res = await axios.get("http://localhost:3001/api/items");
+      const res = await axios.get(
+        "https://todo-app-api-0a5r.onrender.com/api/items"
+      );
       setListItems(res.data);
     };
     getItemsList();
