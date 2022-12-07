@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Vector from "../images/Vector.png";
 import image1 from "../images/Vector1.png";
 import "../index.css";
