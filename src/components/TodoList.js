@@ -6,14 +6,16 @@ import image1 from "../images/Vector1.png";
 
 const TodoList = () => {
   const [listItems, setListItems] = useState([]);
-  const [toggle, setToggle] = useState(true);
+  const [completed, setCompleted] = useState();
 
-  const toggleIt = () => {
-    setToggle(!toggle);
-  };
   const deleteItem = async (id) => {
     const res = await axios.delete(`http://localhost:3001/api/item/${id}`);
-    console.log(res.data);
+  };
+
+  const updateItem = async (id, item) => {
+    const res = await axios.put(`http://localhost:3001/api/item/${id}`);
+    item = true;
+    console.log(item);
   };
 
   useEffect(() => {
@@ -24,14 +26,13 @@ const TodoList = () => {
     getItemsList();
   }, [listItems]);
   return (
-    <div className="mt-4">
+    <div className="mt-4 ">
       {listItems.map((item) => (
         <div className="flex justify-between mt-2">
           <p>{item.item}</p>
           <div className="flex  ">
             <button
-              onClick={toggleIt}
-              style={{ backgroundColor: toggle ? "white" : "#20eeb0" }}
+              onClick={() => updateItem(item._id, item.completed)}
               className="border rounded-full mr-1 w-[50%]"
             >
               <img src={image1} />

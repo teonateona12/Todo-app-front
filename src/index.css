@@ -26,3 +26,10 @@ code {
   border: 1px solid;
   border-color: #20eeb0;
 }
+.bg-color {
+  background-color: #eeeeee;
+}
+
+.txt {
+  color: #007fdb;
+}
