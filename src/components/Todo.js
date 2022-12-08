@@ -75,8 +75,12 @@ function Todo() {
       <div className="bg-white sm:w-[70%] sm:m-auto sm:mt-10 xl:w-[40%]  rounded-b-xl ">
         <img className="w-full" src={image} />
         <div className="-mt-[20%] ml-[60%] w-[30%] ">
-          <h1 className="text-white font-bold text-right">{`${days} ${day}`}</h1>
-          <p className="text-white font-bold text-3xl text-right">{`${hour}:${minutes}`}</p>
+          <h1 className="text-white font-bold text-right">{`${days} ${
+            day < 10 ? `0` + day : day
+          }`}</h1>
+          <p className="text-white font-bold text-3xl text-right">{`${
+            hour < 10 ? `0` + hour : hour
+          }:${minutes < 10 ? `0` + minutes : minutes}`}</p>
         </div>
         <div className="p-6 pb-20 mt-5 md:mt-20">
           <form className="w-full justify-between flex">
