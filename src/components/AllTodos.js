@@ -7,14 +7,14 @@ const AllTodos = ({ listItems, deleteItem, updateItem }) => {
     <div className="mt-8">
       {listItems.map((item) => (
         <div className="flex justify-between mt-2">
-          <p>{item.item}</p>
+          <p className="font-semibold">{item.item}</p>
           <div className="flex  ">
             <button
               style={{
                 backgroundColor: item.completed ? "#20eeb0" : "white",
               }}
               onClick={() => updateItem(item._id, item.completed)}
-              className="border rounded-full mr-1 w-[50%]"
+              className="border rounded-full mr-1 h-[90%] w-[70%]"
             >
               <img className="m-auto" src={image1} />
             </button>

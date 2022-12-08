@@ -83,7 +83,7 @@ function Todo() {
             <div className="inp flex p-1 rounded-md">
               <button
                 onClick={(e) => fillterHandler(e)}
-                className="border2 rounded-full mr-1 w-[15%] h-[80%]"
+                className="border2 rounded-full mr-1 h-[90%] w-[15%]"
               >
                 <img className="m-auto" src={image1} />
               </button>
